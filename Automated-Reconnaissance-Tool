@@ -1,0 +1,17 @@
+#! /bin/python3
+import os
+
+Domain_Name = input("Enter a domain name: ")
+
+print("*********************************************")
+print("Who owsn this domain")
+print("*********************************************")
+
+os.system(f"whois {Domain_Name} | grep -E 'Domain Name|Registrant Organization|Creation Date|Updated Date|Expiry Date|Registrar:|Name Server'")
+
+print("*********************************************")
+print("IP Address associated with the hostname")
+print("***********************************")
+
+os.system(f"nslookup {Domain_Name}")
+
