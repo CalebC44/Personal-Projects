@@ -1,3 +1,4 @@
+
 #! /bin/python3
 import os
 import requests
@@ -5,8 +6,8 @@ import json
 import argparse
 from shodan import Shodan
 
-def default():
-    Domain_Name = input("Enter a domain name: ")
+def default(Domain_Name):
+    #Domain_Name = input("Enter a domain name: ")
 
     print("="*50)
     print("Who owns this domain")
@@ -25,7 +26,7 @@ def default():
     url = f"https://www.virustotal.com/api/v3/domains/{Domain_Name}"
     headers = {
         "accept": "application/json",
-        "x-apikey": "[Hidden]"
+        "x-apikey": "[YOUR_API_KEY]"
     }
 
     response = requests.get(url, headers=headers)
@@ -50,9 +51,9 @@ def shodan(ip):
     print("="*50)
     print("Shdodan output")
     print("="*50)
-    api = Shodan('[Hidden]')
+    api = Shodan('[YOUR_API_KEY]')
 
-    json_input = api.host('8.8.8.8')
+    json_input = api.host(ip)
 
     # Load the JSON string into a Python dictionary
     data = json_input
@@ -112,16 +113,17 @@ def shodan(ip):
 
 def main():
     parser=argparse.ArgumentParser(description="Domain investigation Tool")
+    parser.add_argument("domain", help="Domain to investigate")   
     parser.add_argument("--default",action="store_true", help="Default output (whois, nslookup, and VirusTotal)")
     parser.add_argument("--shodan",action="store_true", help="Requires an IP")
 
     args = parser.parse_args()
     
     if args.default:
-        default()
+        default(args.domain)
 
     if args.shodan:
-        shdoan(args.domain)
+        shodan(args.domain)
 
 if __name__ == "__main__":
         main()
