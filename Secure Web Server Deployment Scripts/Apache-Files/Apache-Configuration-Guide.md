@@ -1,4 +1,5 @@
-## [Offical Documentation](https://httpd.apache.org/docs/2.4/) 
+## Documentation
+- https://httpd.apache.org/docs/2.4/
 
 ## Configuration Rules
 Note: When changing ports make sure to do it in ports.conf as well.
