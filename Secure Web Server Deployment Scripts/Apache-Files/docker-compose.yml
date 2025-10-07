@@ -1,0 +1,27 @@
+services:
+  fail2ban:
+    image: lscr.io/linuxserver/fail2ban:latest
+    container_name: fail2ban
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: host
+    environment:
+      - PUID=1000       # Replace with your host user ID if different
+      - PGID=1000       # Replace with your host group ID if different
+      - TZ=Etc/UTC      # Replace with your local timezone
+      - VERBOSITY=-vv   # Optional: for more verbose logging
+    volumes:
+      - /docker/apache/fail2ban/log:/config/log/fail2ban
+      - /docker/apache/fail2ban/config:/config/fail2ban
+      - /var/log:/var/log:ro                      
+      - /docker/apache/log:/remotelogs/apache2:ro
+    restart: unless-stopped
+  apache:
+    image: apache
+    container_name: apache
+    network_mode: host
+    volumes:
+      - /docker/apache/log:/var/log/apache2
+      - /docker/apache/html:/var/www/html
+    restart: unless-stopped
