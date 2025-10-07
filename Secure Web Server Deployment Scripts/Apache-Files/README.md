@@ -30,6 +30,12 @@ Replace the jail.local file with the one in this folder.
 - Whitelist ip:
 - sed -i '/^ignoreip/s/$/ <NEW_IP>/' /webserver/fail2ban/fail2ban/jail.local
 
+### Step 7: Firewall: 
+- ufw allow 80/tcp
+- ufw allow 443/tcp
+- ufw allow 9000/tcp 
+
+
 
 
 
