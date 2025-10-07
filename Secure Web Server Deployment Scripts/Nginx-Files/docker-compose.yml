@@ -1,0 +1,29 @@
+services:
+  fail2ban:
+    image: lscr.io/linuxserver/fail2ban:latest
+    container_name: fail2ban
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    network_mode: host
+    environment:
+      - PUID=1000       # Replace with your host user ID if different
+      - PGID=1000       # Replace with your host group ID if different
+      - TZ=Etc/UTC      # Replace with your local timezone
+      - VERBOSITY=-vv   # Optional: for more verbose logging
+    volumes:
+      - /docker/nginx/fail2ban/log:/config/log/fail2ban
+      - /docker/nginx/fail2ban/config:/config/fail2ban
+      - /var/log:/var/log:ro                   # System logs (optional)
+      - /docker/nginx/log:/remotelogs/nginx:ro # nginx logs for Fail2ban
+    restart: unless-stopped
+  nginx:
+    image: nginx
+    container_name: nginx
+    network_mode: host
+    # no need to publish ports with host mode
+    volumes:
+      - /docker/nginx/log:/var/log/nginx
+      - /docker/nginx/html:/var/www/html
+    restart: unless-stopped
+
