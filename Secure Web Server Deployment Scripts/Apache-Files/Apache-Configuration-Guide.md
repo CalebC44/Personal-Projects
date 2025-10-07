@@ -37,3 +37,25 @@ Configuration Rules
 - AllowOverride None: Disables the use of .htaccess files to override server configuration in this directory.
 - DirectoryIndex index.html: Specifies that index.html should be served as the default file when a directory is requested.
 - Require ip 1.2.3.4 OR 192.168.0.0/24 : Only this Ip can access the website
+
+Apache commands:
+- Testing site configs 
+  - apachectl configtest
+- Enabling mods and site configs
+  - a2enmod ssl
+  - a2ensite default-ssl.conf
+- Disabling mods and site configs
+  - a2dismod ssl
+  - a2dissite default-ssl.conf
+- View Active Connections to Apache:
+  - netstat -plnt | grep apache2
+- Check Apache Version:
+  - apache2 -v
+- Check Installed Modules:
+  - apache2ctl -M
+- Restart Apache Gracefully (No Connection Drops):
+  - apachectl graceful
+- Tail Error Logs in Real-Time
+  - tail -f /var/log/apache2/error.log
+
+
