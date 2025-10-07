@@ -1,6 +1,7 @@
-[Offical Documentation](https://httpd.apache.org/docs/2.4/)
-Note: When changing ports make sure to do it in ports.conf as well.
+## [Offical Documentation](https://httpd.apache.org/docs/2.4/) 
+
 ## Configuration Rules
+Note: When changing ports make sure to do it in ports.conf as well.
 - VirtualHost PORT:PORT : sets the the configurations for that port
 - ServerAdmin : This will be shown on error messages given by the server
 - ServerName : set the servers name for DNS can list multiple
