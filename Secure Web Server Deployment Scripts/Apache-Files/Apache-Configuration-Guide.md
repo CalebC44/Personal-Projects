@@ -1,15 +1,15 @@
 [Offical Documentation](https://httpd.apache.org/docs/2.4/)
 Note: When changing ports make sure to do it in ports.conf as well.
-Configuration Rules
+## Configuration Rules
 - VirtualHost PORT:PORT : sets the the configurations for that port
 - ServerAdmin : This will be shown on error messages given by the server
 - ServerName : set the servers name for DNS can list multiple
 - ServerAlias : can be linked to the server name
 - DocumentRoot /var/www/html : Sets the default root directory for html files
-### Logging
+## Logging
 - ErrorLog /var/log/apache2 : Error log location
 -  CustomLog /var/log/apache2: Used for access.log
-### SSL
+## SSL
 - SSLEngine on : used for HTTPS
 - SSLCertificateFile /etc/ssl/certs/*.crt: cert file
 - SSLCertificateKeyFile /etc/ssl/private/*.key : key file
@@ -25,20 +25,20 @@ Configuration Rules
 - SSLSessionTickets Off : NOT SURE
 - Redirect "/" "https://localhost/" : Used to redirect one to another
 - Disable Server tokens
-### Security.conf
+## Security.conf
 - ServerTokens On >> ServerTokens ProductOnly
 - ServerSignature On >> ServerSignature Off
 
-### More Complex Configuration Rules
+## More Complex Configuration Rules
 - Access control : https://httpd.apache.org/docs/2.4/howto/access.html
-### Directory Rules
+## Directory Rules
 - Require all granted OR None: Allows access to the directory for all clients or no clients
 - Options FollowSymLinks: Permits Apache to follow symbolic links within the directory.
 - AllowOverride None: Disables the use of .htaccess files to override server configuration in this directory.
 - DirectoryIndex index.html: Specifies that index.html should be served as the default file when a directory is requested.
 - Require ip 1.2.3.4 OR 192.168.0.0/24 : Only this Ip can access the website
 
-Apache commands:
+## Apache commands:
 - Testing site configs 
   - apachectl configtest
 - Enabling mods and site configs
