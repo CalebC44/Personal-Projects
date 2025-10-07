@@ -1,0 +1,42 @@
+[DEFAULT]
+# Default ban time for an IP (e.g., 10 minutes)
+bantime = -1
+
+# Time window to detect repeated offenses (e.g., 10 minutes)
+findtime = 10m
+
+# Number of offenses before banning
+maxretry = 5
+
+# Action to perform when banning
+action = iptables-multiport[name=NoFilter, port="80,443", protocol=tcp]
+# Log level
+loglevel = INFO
+
+# IPs to whitelist
+ignoreip = 127.0.0.1/8
+
+#Bans users who violate modsec rules
+[apache-modsecurity]
+port     = http,https
+logpath  = /remotelogs/apache2/error.log
+action = iptables-multiport[name=ModSecurity, port="80,443", protocol=tcp]
+enabled = true
+maxretry = 1
+
+#Filter to web requests for home directories on Apache servers
+[apache-nohome]
+port     = http,https
+logpath  = /remotelogs/apache2/access.log
+action = iptables-multiport[name=apache-nohome, port="80,443", protocol=tcp]
+enabled = true
+maxretry = 5
+
+#Filter to block web requests on a long or suspicious nature
+[apache-overflows]
+port     = http,https
+logpath  = /remotelogs/apache2/error.log
+action = iptables-multiport[name=apache-overflows, port="80,443", protocol=tcp]
+enabled = true
+maxretry = 5
+
