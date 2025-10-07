@@ -1,1 +1,39 @@
-# d
+# Secure Nginx Setup Guide
+## Initial Setup
+### Downloading Modsecurity Files
+- wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
+- tar -xzf coreruleset-4.9.0-minimal.tar.gz
+- apache/modsecurity/rules
+- apache/modsecurity/crs-setup.conf.example
+
+### Step 1: Docker compose install
+- mkdir -p ~/.docker/cli-plugins/
+- wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
+- chmod +x ~/.docker/cli-plugins/docker-compose
+### Step 2: Pulling the Image
+- docker pull linuxserver/fail2ban:latest
+###  Step 3: Create Directory for fail2ban
+- mkdir -p /webserver/fail2ban/config
+- mkdir -p /webserver/fail2ban/log/
+
+### Step 4: Docker compose use
+- docker compose up -d --build 
+- docker compose stop
+- *Remove it all*
+- docker compose down
+
+### Step 5: Fail2ban Commands
+- docker exec -it fail2ban fail2ban-client status
+- docker exec -it fail2ban fail2ban-client status nginx-modsecurity
+- docker exec -it fail2ban fail2ban-client set JAIL unbanip IP_ADDRESS
+- docker exec -it fail2ban /bin/bash
+- Whitelist ip:
+  - sed -i '/^ignoreip/s/$/ <NEW_IP>/' /webserver/fail2ban/fail2ban/jail.local
+ 
+### Step 6: Firewall: 
+- ufw allow 80/tcp
+- ufw allow 443/tcp
+- ufw allow 9000/tcp 
+
+
+
