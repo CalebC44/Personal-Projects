@@ -10,8 +10,7 @@
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
 - tar -xzf coreruleset-4.9.0-minimal.tar.gz
-- apache/modsecurity/rules
-- apache/modsecurity/crs-setup.conf.example
+- sudo rm coreruleset-4.9.0-minimal.tar.gz 
 
 ## Steps
 
