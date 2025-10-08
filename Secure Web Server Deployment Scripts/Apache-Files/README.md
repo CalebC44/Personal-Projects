@@ -13,8 +13,10 @@
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/000-default.conf
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf
+- sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/jail.local
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Dockerfile
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/docker-compose.yml
+- 
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
@@ -37,7 +39,8 @@ Giving a user permission to run the docker container
 You should now have a running Apache server on htttps://127.0.0.1
 
 ### Step 5: update jail.local 
-Replace the jail.local file with the one in this folder.
+Replace the jail.local file with the one in this folder
+- cp ./setup/jail.local /docker/apache/fail2ban/config/jail.local
 
 ### Step 6: Helpfull Commands
 - docker exec -it fail2ban fail2ban-client status
