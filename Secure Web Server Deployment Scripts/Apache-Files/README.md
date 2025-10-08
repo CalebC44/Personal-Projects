@@ -23,6 +23,8 @@
 ## Steps
 ### Step 1: Building the Apache Container
 - docker build -t apache .
+
+You should now have a running Apache server on htttps://127.0.0.1
 ### Step 2: Pulling the Image
 - docker pull linuxserver/fail2ban:latest
 ### Step 3: Create Directory for fail2ban
