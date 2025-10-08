@@ -20,11 +20,13 @@
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
 - tar -xzf coreruleset-4.9.0-minimal.tar.gz
 - sudo rm coreruleset-4.9.0-minimal.tar.gz 
-
+### Setting permission for user
+Giving a user permission to run the docker container 
+- sudo usermod -aG docker $user
+- newgrp docker 
 ## Steps
 ### Step 1: Building the Apache Container
 - sudo docker build -t apache .
-
 You should now have a running Apache server on htttps://127.0.0.1
 ### Step 2: Pulling the Image
 - sudo docker pull linuxserver/fail2ban:latest
@@ -48,9 +50,6 @@ Replace the jail.local file with the one in this folder.
 - ufw allow 80/tcp
 - ufw allow 443/tcp
 - ufw allow 9000/tcp
-
-docker compose up -d --build
-unable to get image 'lscr.io/linuxserver/fail2ban:latest': permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.47/images/lscr.io/linuxserver/fail2ban:latest/json": dial unix /var/run/docker.sock: connect: permission denied
 
 
 
