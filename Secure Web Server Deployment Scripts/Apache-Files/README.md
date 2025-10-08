@@ -8,7 +8,7 @@
   - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
   - chmod +x ~/.docker/cli-plugins/docker-compose
 ### Creating the Directories & Downloading Files
-- sudo mkdir /apache_webserver/setup =p
+- sudo mkdir /apache_webserver/setup -p
 - cd /apache_webserver/setup
 - sudo wget -O 000-default.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/000-default.conf"
 - sudo wget -O default-ssl.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf"
