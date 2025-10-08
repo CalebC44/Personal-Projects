@@ -8,7 +8,7 @@
 - sudo wget -O security2.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf"
 
 ### Downloading Modsecurity Files
-- wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
+- sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
 - tar -xzf coreruleset-4.9.0-minimal.tar.gz
 - apache/modsecurity/rules
 - apache/modsecurity/crs-setup.conf.example
