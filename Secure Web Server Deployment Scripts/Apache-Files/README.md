@@ -2,7 +2,7 @@
 ## Initial Setup
 ### Updateing and Installing Required Tools
 - sudo apt update && sudo apt upgrade
-- sudo apt install docker
+- sudo apt install docker.io
 - ### Docker compose install
   - mkdir -p ~/.docker/cli-plugins/
   - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
