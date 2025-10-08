@@ -27,7 +27,6 @@ Giving a user permission to run the docker container
 ## Steps
 ### Step 1: Building the Apache Container
 - sudo docker build -t apache .
-You should now have a running Apache server on htttps://127.0.0.1
 ### Step 2: Pulling the Image
 - sudo docker pull linuxserver/fail2ban:latest
 ### Step 3: Create Directory for fail2ban
@@ -35,10 +34,12 @@ You should now have a running Apache server on htttps://127.0.0.1
 ### Step 4: Docker compose use
 - sudo docker compose up -d --build
 
+You should now have a running Apache server on htttps://127.0.0.1
+
 ### Step 5: update jail.local 
 Replace the jail.local file with the one in this folder.
 
-### Step 6: Commands
+### Step 6: Helpfull Commands
 - docker exec -it fail2ban fail2ban-client status
 - docker exec -it fail2ban fail2ban-client status apache-modsecurity
 - docker exec -it fail2ban fail2ban-client set JAIL unbanip IP_ADDRESS
