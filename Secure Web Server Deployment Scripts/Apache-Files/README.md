@@ -1,12 +1,19 @@
 # Secure Apache Setup Guide
 ## Initial Setup
+### Updateing and Installing Required Tools
+- sudo apt update && sudo apt upgrade
+- sudo apt install docker
+- ### Docker compose install
+  - mkdir -p ~/.docker/cli-plugins/
+  - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
+  - chmod +x ~/.docker/cli-plugins/docker-compose
 ### Creating the Directories & Downloading Files
 - sudo mkdir /apache_webserver/setup =p
 - cd /apache_webserver/setup
 - sudo wget -O 000-default.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/000-default.conf"
 - sudo wget -O default-ssl.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf"
 - sudo wget -O security2.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf"
-- - sudo wget -O security2.conf "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf"
+- sudo wget -O DockerFile "https://github.com/CalebC44/Personal-Projects/blob/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/DockerFile"
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
