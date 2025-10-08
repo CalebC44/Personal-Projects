@@ -14,6 +14,7 @@
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Dockerfile
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/docker-compose.yml
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
@@ -22,15 +23,15 @@
 
 ## Steps
 ### Step 1: Building the Apache Container
-- docker build -t apache .
+- sudo docker build -t apache .
 
 You should now have a running Apache server on htttps://127.0.0.1
 ### Step 2: Pulling the Image
-- docker pull linuxserver/fail2ban:latest
+- sudo docker pull linuxserver/fail2ban:latest
 ### Step 3: Create Directory for fail2ban
-- mkdir -p /docker/fail2ban/log/
+- sudo mkdir -p /docker/fail2ban/log/
 ### Step 4: Docker compose use
-- docker compose up -d --build
+- sudo docker compose up -d --build
 
 ### Step 5: update jail.local 
 Replace the jail.local file with the one in this folder.
@@ -46,7 +47,11 @@ Replace the jail.local file with the one in this folder.
 ### Step 7: Firewall: 
 - ufw allow 80/tcp
 - ufw allow 443/tcp
-- ufw allow 9000/tcp 
+- ufw allow 9000/tcp
+
+docker compose up -d --build
+unable to get image 'lscr.io/linuxserver/fail2ban:latest': permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Get "http://%2Fvar%2Frun%2Fdocker.sock/v1.47/images/lscr.io/linuxserver/fail2ban:latest/json": dial unix /var/run/docker.sock: connect: permission denied
+
 
 
 
