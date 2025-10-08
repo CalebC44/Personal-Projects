@@ -21,11 +21,8 @@
 - sudo rm coreruleset-4.9.0-minimal.tar.gz 
 
 ## Steps
-
-### Step 1: Docker compose install
-- mkdir -p ~/.docker/cli-plugins/
-- wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
-- chmod +x ~/.docker/cli-plugins/docker-compose
+### Step 1: Building the Apache Container
+- docker build -t apache .
 ### Step 2: Pulling the Image
 - docker pull linuxserver/fail2ban:latest
 ### Step 3: Create Directory for fail2ban
