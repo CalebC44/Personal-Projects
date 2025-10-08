@@ -11,8 +11,8 @@
 - sudo mkdir /apache_webserver/setup -p
 - cd /apache_webserver
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/000-default.conf
-- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf
-- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf
+- sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/default-ssl.conf
+- sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/security2.conf
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Dockerfile
 
 ### Downloading Modsecurity Files
