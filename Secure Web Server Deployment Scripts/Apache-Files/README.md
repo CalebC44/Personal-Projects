@@ -43,6 +43,8 @@ Replace the jail.local file with the one in this folder
 - cp ./setup/jail.local /docker/apache/fail2ban/config/jail.local
 
 ### Step 6: Helpfull Commands
+To go into the container to edit any files.
+- docker exec -it <container-id-or-name> /bin/bash
 - docker exec -it fail2ban fail2ban-client status
 - docker exec -it fail2ban fail2ban-client status apache-modsecurity
 - docker exec -it fail2ban fail2ban-client set JAIL unbanip IP_ADDRESS
