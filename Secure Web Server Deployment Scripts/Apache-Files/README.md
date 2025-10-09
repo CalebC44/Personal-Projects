@@ -16,7 +16,6 @@
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/jail.local
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Dockerfile
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/docker-compose.yml
-- 
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
@@ -43,8 +42,9 @@ Replace the jail.local file with the one in this folder
 - cp ./setup/jail.local /docker/apache/fail2ban/config/jail.local
 
 ### Step 6: Helpfull Commands
-To go into the container to edit any files.
-- docker exec -it <container-id-or-name> /bin/bash
+To go into the apache container to edit any files.
+- docker exec -it apache /bin/bash
+Fail2ban Commands
 - docker exec -it fail2ban fail2ban-client status
 - docker exec -it fail2ban fail2ban-client status apache-modsecurity
 - docker exec -it fail2ban fail2ban-client set JAIL unbanip IP_ADDRESS
@@ -56,6 +56,7 @@ To go into the container to edit any files.
 - ufw allow 80/tcp
 - ufw allow 443/tcp
 - ufw allow 9000/tcp
+- ufe enable
 
 
 
