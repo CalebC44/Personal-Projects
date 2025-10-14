@@ -58,6 +58,9 @@ Fail2ban Commands
 - ufw allow 9000/tcp
 - ufe enable
 
+### Step 8: Graylog Integration
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/apache_to_gelf.lua
+- sudo wget 
 
 
 
