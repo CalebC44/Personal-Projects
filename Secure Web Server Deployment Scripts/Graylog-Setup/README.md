@@ -1,7 +1,5 @@
 # Setting up the Graylog Server
 - Reference: [Lawrence Systems](https://www.youtube.com/watch?v=DwYwrADwCmg)
-### Step 0: Updates
-- sudo apt update
 ### Step 1: Set a Default Time Zone
 - sudo timedatectl set-timezone UTC
 ### Step 2: Install Necessary Files 
