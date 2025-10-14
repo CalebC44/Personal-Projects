@@ -28,7 +28,7 @@ Step 6: Getting Into Graylog
 - Title: Syslog input
 - Port: 1514
 - Keep everything else the same
-- Step 8: Setting up the Clients to Send to Graylog
+### Step 8: Setting up the Clients to Send to Graylog
 - sudo nano /etc/rsyslog.conf
 - *.* @<graylog_ip>:<graylog_udp_port>
 
