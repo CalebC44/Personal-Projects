@@ -43,7 +43,7 @@ Replace the jail.local file with the one in this folder
 
 ### Step 6: Helpfull Commands
 To go into the apache container to edit any files.
-- docker exec -it apache /bin/bash
+- docker exec -it apache /bin/bash \
 Fail2ban Commands
 - docker exec -it fail2ban fail2ban-client status
 - docker exec -it fail2ban fail2ban-client status apache-modsecurity
