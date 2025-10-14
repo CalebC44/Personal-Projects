@@ -56,6 +56,7 @@ Fail2ban Commands
 - ufw allow 80/tcp
 - ufw allow 443/tcp
 - ufw allow 9000/tcp
+- ufw allow 2020? 12201?
 - ufe enable
 
 ### Step 8: Graylog Integration
@@ -63,7 +64,6 @@ Fail2ban Commands
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/docker-compose.yml
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/fluent-bit.conf
 
-network graylog_graynet declared as external, but could not be found
 
 
 
