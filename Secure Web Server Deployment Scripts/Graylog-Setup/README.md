@@ -3,7 +3,7 @@
 ### Step 1: Set a Default Time Zone
 - sudo timedatectl set-timezone UTC
 ### Step 2: Install Necessary Files 
-- Sudo apt update && sudo apt install docker.io
+- sudo apt update && sudo apt install docker.io
 - Installing docker compose
   - mkdir -p ~/.docker/cli-plugins/
   - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
