@@ -16,7 +16,9 @@
 - To change password
   - echo -n yourpassword | shasum -a 256
   - Update this line in the docker-compose.yml
-  - GRAYLOG_ROOT_PASSWORD_SHA2
+    - cd graylog
+    - vim docker-compose.yml
+    - Find this line and update it: GRAYLOG_ROOT_PASSWORD_SHA2:
 ### Step 5: Starting Graylog
 - docker compose up -d
 Step 6: Getting Into Graylog
