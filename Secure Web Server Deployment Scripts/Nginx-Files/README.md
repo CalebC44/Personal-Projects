@@ -15,8 +15,8 @@
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/jail.local
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/nginx-modsecurity.conf
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/nginx.conf
-- sudo wget -P https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Dockerfile
-- sudo wget -P https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/docker-compose.yml
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Dockerfile
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/docker-compose.yml
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
