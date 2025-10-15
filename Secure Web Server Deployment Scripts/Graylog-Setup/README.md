@@ -8,10 +8,13 @@
   - mkdir -p ~/.docker/cli-plugins/
   - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
   - chmod +x ~/.docker/cli-plugins/docker-compose
-### Step 3: Create Directories for the Graylog Docker Container
+### Step 3: Giving a user permission to run the docker container
+- sudo usermod -aG docker $user
+- newgrp docker
+### Step 4: Create Directories for the Graylog Docker Container
 - sudo mkdir /docker && cd /docker
 - git clone https://github.com/lawrencesystems/graylog.git
-### Step 4: Changing the Default Password (Recommended)
+### Step 5: Changing the Default Password (Recommended)
 - Default credentials admin. Admin
 - To change password
   - echo -n yourpassword | shasum -a 256
@@ -19,7 +22,7 @@
     - cd graylog
     - vim docker-compose.yml
     - Find this line and update it: GRAYLOG_ROOT_PASSWORD_SHA2:
-### Step 5: Starting Graylog
+### Step 6: Starting Graylog
 - docker compose up -d
 Step 6: Getting Into Graylog
 - Go to http://GRAYLOG_SERVER_IP:9000
@@ -33,6 +36,4 @@ Step 6: Getting Into Graylog
 ### Step 8: Setting up the Clients to Send to Graylog
 - sudo nano /etc/rsyslog.conf
 - *.* @<graylog_ip>:<graylog_udp_port>
-
-
 - sudo systemctl restart rsyslog
