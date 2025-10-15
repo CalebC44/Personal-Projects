@@ -10,7 +10,7 @@
 ### Creating the Directories & Downloading Files
 - sudo mkdir /nginx_webserver/setup -p
 - cd /nginx_webserver
-- sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Docker%20File
+- sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Dockerfile
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Default
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/docker-compose.yml
 - sudo wget -P ./setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/jail.local
