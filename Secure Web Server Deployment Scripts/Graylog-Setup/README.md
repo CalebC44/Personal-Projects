@@ -5,9 +5,9 @@
 ### Step 2: Install Necessary Files 
 - sudo apt update && sudo apt install docker.io
 - Installing docker compose
-  - mkdir -p ~/.docker/cli-plugins/
-  - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
-  - chmod +x ~/.docker/cli-plugins/docker-compose
+  - sudo mkdir -p ~/.docker/cli-plugins/
+  - sudo wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
+  - sudo chmod +x ~/.docker/cli-plugins/docker-compose
 ### Step 3: Giving a user permission to run the docker container
 - sudo usermod -aG docker $user
 - newgrp docker
