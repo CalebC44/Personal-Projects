@@ -24,16 +24,16 @@
     - Find this line and update it: GRAYLOG_ROOT_PASSWORD_SHA2:
 ### Step 6: Starting Graylog
 - docker compose up -d
-Step 6: Getting Into Graylog
+### Step 7: Getting Into Graylog
 - Go to http://GRAYLOG_SERVER_IP:9000
 - Login with your credentials (username = admin)
-### Step 7: Setting up the Input 
+### Step 8: Setting up the Input 
 - Go to System (Top right) -> Inputs
 - Set input to Syslog TCP and launch the new input. 
 - Title: Syslog input
 - Port: 1514
 - Keep everything else the same
-### Step 8: Setting up the Clients to Send to Graylog
+### Step 9: Setting up the Clients to Send to Graylog
 - sudo nano /etc/rsyslog.conf
 - *.* @<graylog_ip>:<graylog_udp_port>
 - sudo systemctl restart rsyslog
