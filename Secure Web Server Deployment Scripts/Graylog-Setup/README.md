@@ -9,7 +9,7 @@
   - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
   - chmod +x ~/.docker/cli-plugins/docker-compose
 ### Step 3: Create Directories for the Graylog Docker Container
-- mkdir /cd docker && cd /docker
+- sudo mkdir /cd docker && cd /docker
 - git clone https://github.com/lawrencesystems/graylog.git
 ### Step 4: Changing the Default Password (Recommended)
 - Default credentials admin. Admin
