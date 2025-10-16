@@ -57,7 +57,7 @@ Fail2ban Commands
 - ufw allow 443/tcp
 - ufw enable
 
-### Step 8: Graylog Integration
+### Step 8: Formating for Graylog
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/apache_to_gelf.lua
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/docker-compose.yml
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/fluent-bit.conf
