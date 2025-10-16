@@ -37,23 +37,35 @@ Giving a user permission to run the docker container
 - mkdir -p /docker/fail2ban/config
 - mkdir -p /docker/fail2ban/log/
 
-### Step 4: Docker compose use
-- docker compose up -d --build 
-- docker compose stop
-- docker compose down
+### Step 4: Building with docker compose
+- docker compose up -d --build
 
-### Step 5: Fail2ban Commands
+You should now have a running Nginx server on htttps://127.0.0.1
+
+### Step 5: update jail.local 
+Replace the jail.local file with the one in this folder
+- cp ./setup/jail.local /docker/nginx/fail2ban/config/jail.local
+
+### Step 6: Help Docker Commands
+To go into the nginx container to edit any files.
+- docker exec -it nginx /bin/bash \
+Fail2ban Commands
 - docker exec -it fail2ban fail2ban-client status
-- docker exec -it fail2ban fail2ban-client status nginx-modsecurity
 - docker exec -it fail2ban fail2ban-client set JAIL unbanip IP_ADDRESS
 - docker exec -it fail2ban /bin/bash
 - Whitelist ip:
-  - sed -i '/^ignoreip/s/$/ <NEW_IP>/' /webserver/fail2ban/fail2ban/jail.local
+- sed -i '/^ignoreip/s/$/ <NEW_IP>/' /webserver/fail2ban/fail2ban/jail.local
  
-### Step 6: Firewall: 
+### Step 7: Firewall: 
 - ufw allow 80/tcp
 - ufw allow 443/tcp
-- ufw allow 9000/tcp 
+- ufw enable
+
+### Step 8: Formating for Graylog
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/docker-compose.yml
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/fluent-bit.conf
+- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/nginx_to_gelf.lua
+
 
 
 
