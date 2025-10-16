@@ -32,8 +32,8 @@ Giving a user permission to run the docker container
 - sudo docker pull linuxserver/fail2ban:latest
 ### Step 3: Create Directory for fail2ban
 - sudo mkdir -p /docker/fail2ban/log/
-### Step 4: Docker compose use
-- sudo docker compose up -d --build
+### Step 4: Building with docker compose
+- docker compose up -d --build 
 
 You should now have a running Apache server on htttps://127.0.0.1
 
@@ -41,7 +41,7 @@ You should now have a running Apache server on htttps://127.0.0.1
 Replace the jail.local file with the one in this folder
 - cp ./setup/jail.local /docker/apache/fail2ban/config/jail.local
 
-### Step 6: Helpfull Commands
+### Step 6: Help Docker Commands
 To go into the apache container to edit any files.
 - docker exec -it apache /bin/bash \
 Fail2ban Commands
@@ -55,9 +55,7 @@ Fail2ban Commands
 ### Step 7: Firewall: 
 - ufw allow 80/tcp
 - ufw allow 443/tcp
-- ufw allow 9000/tcp
-- ufw allow 2020? 12201?
-- ufe enable
+- ufw enable
 
 ### Step 8: Graylog Integration
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Apache-Files/Graylogger/apache_to_gelf.lua
