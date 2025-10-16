@@ -16,6 +16,10 @@
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/nginx.conf
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Dockerfile
 - sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/docker-compose.yml
+## Formating for Graylog Files
+- sudo wget -P /nginx_webserver/graylog https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/docker-compose.yml
+- sudo wget -P /nginx_webserver/graylog https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/fluent-bit.conf
+- sudo wget -P /nginx_webserver/graylog https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/nginx_to_gelf.lua
 
 ### Downloading Modsecurity Files
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
@@ -61,11 +65,9 @@ Fail2ban Commands
 - ufw allow 443/tcp
 - ufw enable
 
-### Step 8: Formating for Graylog
-- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/docker-compose.yml
-- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/fluent-bit.conf
-- sudo wget https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Graylogger/nginx_to_gelf.lua
-
+### Step 8: Formating for Graylog Setup
+- cd /nginx_webserver/graylog
+- docker compose up -d
 
 
 
