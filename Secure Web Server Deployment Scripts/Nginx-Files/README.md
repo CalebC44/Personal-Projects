@@ -10,7 +10,6 @@
 ### Creating the Directories & Downloading Files
 - sudo mkdir /nginx_webserver/setup -p
 - cd /nginx_webserver
-
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/Default
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/jail.local
 - sudo wget -P /nginx_webserver/setup https://raw.githubusercontent.com/CalebC44/Personal-Projects/refs/heads/main/Secure%20Web%20Server%20Deployment%20Scripts/Nginx-Files/nginx-modsecurity.conf
