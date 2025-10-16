@@ -34,8 +34,8 @@ Giving a user permission to run the docker container
 - docker pull linuxserver/fail2ban:latest
   
 ###  Step 3: Create Directory for fail2ban
-- mkdir -p /webserver/fail2ban/config
-- mkdir -p /webserver/fail2ban/log/
+- mkdir -p /docker/fail2ban/config
+- mkdir -p /docker/fail2ban/log/
 
 ### Step 4: Docker compose use
 - docker compose up -d --build 
