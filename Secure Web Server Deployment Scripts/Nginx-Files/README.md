@@ -21,14 +21,15 @@
 - sudo wget https://github.com/coreruleset/coreruleset/releases/download/v4.9.0/coreruleset-4.9.0-minimal.tar.gz
 - tar -xzf coreruleset-4.9.0-minimal.tar.gz
 - sudo rm coreruleset-4.9.0-minimal.tar.gz
-  
-## Steps: 
 
-### Step 2: Setting permission for user
+### Setting permission for user
 Giving a user permission to run the docker container
 - sudo usermod -aG docker $user
 - newgrp docker
-
+  
+## Steps:
+### Step 1: Building the Nginx Container
+- docker build -t nginx .
 ### Step 2: Pulling the Image
 - docker pull linuxserver/fail2ban:latest
   
