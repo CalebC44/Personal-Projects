@@ -29,6 +29,11 @@
 - wget -O ~/.docker/cli-plugins/docker-compose https://github.com/docker/compose/releases/download/v2.32.1/docker-compose-linux-x86_64
 - chmod +x ~/.docker/cli-plugins/docker-compose
 
+### Step 2: Setting permission for user
+Giving a user permission to run the docker container
+- sudo usermod -aG docker $user
+- newgrp docker
+
 ### Step 2: Pulling the Image
 - docker pull linuxserver/fail2ban:latest
   
